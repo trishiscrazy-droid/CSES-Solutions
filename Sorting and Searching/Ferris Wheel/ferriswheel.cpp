@@ -16,11 +16,13 @@ int main() {
         }
     }
     sort(weight.begin(), weight.end());
-    for (uint i = 0; i < nc - 1; i++) {
-        if (weight[i] + weight[i+1] <= mxw) {
+    uint l = 0, r = nc - 1;
+    while (l < r) {
+        if (weight[l] + weight[r] <= mxw) {
             ng--;
-            i++;
+            l++;
         }
+        r--;
     }    
     cout << to_string(ng);
     return 0;
